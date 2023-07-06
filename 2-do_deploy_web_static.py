@@ -61,12 +61,14 @@ def do_deploy(archive_path):
     for host in env.hosts:
         try:
             with Connection(host) as c:
+                print("Executing task 'do_deploy'")
                 c.put(archive_path, remote='/tmp/')
                 c.run('mkdir -p /data/web_static/releases/')
-                c.run(f"tar -xvf /tmp/{archive_path} -C {dest_path}")
+                c.run(f"tar -xzf /tmp/{archive_path} -C {dest_path}")
                 c.run(f'rm -rf {archive_path}')
                 c.run('rm -rf /data/web_static/current')
                 c.run(f'ln -sf {dest_path}/ /data/web_static/current')
+                print('New version deployed!')
                 return True
         except Exception as e:
             return False
