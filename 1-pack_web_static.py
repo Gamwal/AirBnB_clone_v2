@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Compress a folder to an archive before sending"""
-
 from fabric.api import local
 from datetime import datetime
 import os
@@ -18,7 +17,6 @@ def do_pack():
         None if function failed
         else, returns
     """
-
     if not os.path.exists("versions"):
         os.makedirs("versions")
 
