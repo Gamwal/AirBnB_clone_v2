@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Compress before sending
+"""Compress a folder to an archive before sending"""
 
 from fabric.api import local
 from datetime import datetime
