@@ -28,7 +28,7 @@ def do_pack():
     print(f"Packing web_static to {arc_path}")
 
     try:
-        local(f"tar -cvzf {arc_path} {dir}")
+        local(f"sudo tar -cvzf {arc_path} {dir}")
         size = os.stat(arc_path)
         print(f"{dir} packed: {arc_path} -> {size.st_size}Bytes")
         return f"{arc_path}"
