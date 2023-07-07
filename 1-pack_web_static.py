@@ -18,10 +18,7 @@ def do_pack():
         else, returns
     """
     if not os.path.isdir("versions"):
-        try:
-            local("mkdir -p versions")
-        except Exception as e:
-            return None
+        os.makedirs("versions")
 
     dir = "web_static"
     timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
