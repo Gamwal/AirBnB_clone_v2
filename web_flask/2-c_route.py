@@ -22,6 +22,7 @@ def dhbnb():
 @app.route('/c/<text>', strict_slashes=False)
 def ctext(text):
     """Function that displays C followed by text"""
+    text = text.replace("_", " ")
     return f"C {escape(text)}"
 
 
