@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# Flask Application
+"""Flask Application"""
 
 from flask import Flask, request
 from markupsafe import escape
