@@ -42,7 +42,7 @@ def isnumber(n):
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
 def isnumberhtml(n):
-    """Function that displays n if number"""
+    """Function that displays html if n is a number"""
     return render_template('5-number.html', n=n)
 
 
